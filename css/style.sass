@@ -1,0 +1,693 @@
+@import "variables"
+
+*
+    padding: 0
+    margin: 0
+    box-sizing: border-box
+    scroll-behavior: smooth
+    font-family: 'Roboto', sans-serif
+    letter-spacing: 2px
+
+// Mixins
+@mixin span()
+    display: block
+    width: 90px
+    background-color: $span-bg-color
+    text-transform: uppercase
+    padding: 12px
+    font-weight: 600
+    font-size: 12px
+    color: $leftPart-list-color
+    font-family: montserrat
+    letter-spacing: 0
+    margin-bottom: 15px
+    text-align: center
+
+// preloader
+.preloader
+    position: relative
+    display: flex
+    justify-content: center
+    align-items: center
+    min-height: 100vh
+    background-color: $rightPart-bg-color
+    p
+        position: relative
+        font-size: 38px
+        font-weight: 200
+        letter-spacing: 2px
+        margin: 0 auto
+        width: 13em
+        text-align: center
+        white-space: nowrap
+        overflow: hidden
+        color: $leftPart-list-color
+        border-right: 2px solid rgba(255, 255, 255, 0.75) 
+    .anim-typeWriter
+        animation: typeWriter 3s steps(40) 1s 1 normal both, blinkTextCursor 500ms steps(40) infinite normal
+
+// preloader animation
+@keyframes typeWriter
+    0%
+        width: 0
+    100%
+        width: 13em
+@keyframes blinkTextCursor
+    0%
+        border-right-color: rgba(255, 255, 255, 0.75) 
+    100%
+        border-right-color: transparent
+
+// first content animation   
+@keyframes circle-in-top-right
+    from
+        clip-path: circle(0%)
+
+    to
+        clip-path: circle(150% at top right)
+[transition-style="in:circle:top-right"]
+    animation: 2.5s cubic-bezier(0.25, 1, 0.3, 1) circle-in-top-right both
+
+// Content of Website
+.portfolio-container
+    position: relative
+    min-height: 100vh
+    width: 100%
+    display: flex
+    align-items: center
+    color: $body-text-color
+    display: none
+    .mobile-navbar
+        position: fixed
+        top: 0
+        left: 0
+        z-index: 10
+        width: 100%
+        height: auto
+        background-color: $leftPart-bg-color
+        color: $body-text-color
+        display: none
+        .navbar-inner
+            display: flex
+            justify-content: space-between
+            align-items: center
+            padding: 20px 40px
+            .logo
+                font-size: 32px
+            .list
+                display: flex
+                ul
+                    display: flex
+                    list-style: none
+                    li
+                        color: $body-text-color
+                        cursor: pointer
+                        &:not(:last-child)
+                            margin: 0 14px 0 0
+                .toggle
+                    margin-left: 20px
+                    cursor: pointer
+                            
+    .leftPart
+        position: fixed
+        width: 350px
+        height: 100vh
+        display: flex
+        align-items: center
+        justify-content: flex-start
+        padding: 0 100px
+        left: 0
+        top: 0
+        background-color: $leftPart-bg-color
+        z-index: 10
+        .leftPart-inner
+            .logo
+                margin-bottom: 30px
+                font-weight: 800
+                letter-spacing: 2px
+
+            ul 
+                li
+                    list-style: none
+                    padding: 8px 0px
+                    text-transform: capitalize
+                    font-weight: 500
+                    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+                    color: $leftPart-list-color
+                    transition: $transition
+                    line-height: 1
+                    margin: 16px 0
+                    cursor: pointer
+                    &:hover
+                        letter-spacing: 2.5px
+                        color: $leftPart-list-color-hover
+                .checked
+                    letter-spacing: 1.5px
+                    color: $leftPart-list-color-hover
+            
+            .toggle
+                margin: 50px 0 0
+                p
+                    font-size: 16px
+                    color: $body-text-color
+                    cursor: pointer
+
+    .rightPart
+        position: relative
+        width: 100%
+        min-height: 100vh
+        background-color: $rightPart-bg-color
+        padding-left: 350px
+
+        .rightPart-inner
+            position: relative
+            width: 100%
+            border-left: 1px solid $rightPart-border-color
+            min-height: 100vh
+
+            .portfolio-section
+                position: fixed
+                top: 0
+                left: 0
+                bottom: 0
+                right: 0
+                padding-left: 350px
+                overflow-x: hidden
+                overflow-y: auto
+                opacity: 0
+                z-index: -1
+                transition: $transition
+                .container
+                    max-width: 960px
+                    width: 100%
+                    margin-left: auto
+                    margin-right: auto
+                    height: auto
+                    padding: 0 40px
+                    position: relative
+                    min-height: 100vh
+                    
+                    // start Home Section style
+                    .portfolio-home
+                        width: 100%
+                        min-height: 100vh
+                        display: flex
+                        align-items: center
+                        justify-content: center
+                        position: relative
+                        .home-content
+                            display: flex
+                            .avatar
+                                position: relative
+                                max-width: 290px
+                                max-height: 300px
+                                border-radius: 50%
+                                overflow: hidden
+                                animation-duration: 4s
+                                animation-iteration-count: infinite
+                                animation-timing-function: linear
+                                animation-name: borderAnimate
+
+                                @keyframes borderAnimate
+                                    0%
+                                        border-radius: 50% 40% 50% 50%
+
+                                    25%
+                                        border-radius: 40% 50% 40% 40%
+
+                                    50%
+                                        border-radius: 40% 50% 40% 50%
+
+                                    75%
+                                        border-radius: 50% 50% 40% 50%
+
+                                    100%
+                                        border-radius: 50% 40% 50% 50%
+
+
+                                &::after
+                                    content: ''
+                                    position: absolute
+                                    left: 0
+                                    top: 0
+                                    right: 0
+                                    bottom: 0
+                                    border-radius: inherit
+                                    border: 10px solid rgba(0, 0, 0, 0.5)
+                                img
+                                    width: 100%
+                                    height: 100%
+                                
+                            .home-text
+                                display: flex
+                                justify-content: center
+                                align-items: flex-start
+                                flex-direction: column
+                                padding-left: 60px
+                                h3
+                                    font-size: 90px
+                                    font-weight: 900
+                                    text-transform: uppercase
+                                    margin-bottom: 20px
+                                    span
+                                        -webkit-text-stroke: 0.8px $body-text-color
+                                        color: transparent
+
+                                p
+                                    color: $leftPart-list-color
+                                    font-weight: 500
+                                    max-width: 450px
+                                    line-height: 1.8
+
+                    // start About Section style
+                    .portfolio-about
+                        width: 100%
+                        min-height: 100vh
+                        position: relative
+                        .about-content
+                            padding: 100PX 0PX
+                            .about-image
+                                width: 100%
+                                height: auto
+                                clear: both
+                                float: left
+                                margin-bottom: 48px
+                                overflow: hidden
+                                img
+                                    transition: $transition
+                                    &:hover
+                                        transform: $transform
+                            .about-text
+                                h3
+                                    font-weight: 700
+                                    font-size: 22px
+                                    margin-bottom: 26px
+                                    text-transform: capitalize
+                                .about-text-inner
+                                    display: flex
+                                    justify-content: space-between
+                                    align-items: center
+                                    .left
+                                        width: 50%
+                                        padding-right: 50px
+                                        p
+                                            color: $leftPart-list-color
+                                            font-weight: 500
+                                            max-width: 450px
+                                            line-height: 1.8
+                                    .right
+                                        width: 45%
+                                        padding-left: 50px
+                                        ul
+                                            list-style: none
+                                            margin: 0
+                                            li
+                                                width: 100%
+                                                p
+                                                    color: $leftPart-list-color
+                                                    span
+                                                        min-width: 90px
+                                                        display: inline-block
+                                                        font-weight: 600
+                                                        color: $body-text-color
+                                                        text-transform: capitalize
+                                                        line-height: 1.8
+                                                    a
+                                                        text-decoration: none
+                                                        color: inherit
+                                                        transition: $transition
+                                                        cursor: pointer
+                                                        &:hover
+                                                            letter-spacing: 1.5px
+                                                            color: $leftPart-list-color-hover
+                            
+                            .about-social
+                                ul
+                                    list-style: none
+                                    display: flex
+                                    justify-content: flex-start
+                                    align-items: center
+                                    li
+                                        a
+                                            text-decoration: none
+                                            color: $body-text-color
+                                            font-size: 16px
+                                        &:not(:last-child)
+                                            margin-right: 22px
+                                                
+                    // Start Projects Section Style
+                    .portfolio-projects 
+                        position: relative
+                        width: 100%
+                        min-height: 100vh
+                        .projects-content
+                            padding: 100PX 0PX
+                            .projects-title
+                                width: 100%
+                                margin-bottom: 60px
+                                span
+                                    @include span()
+                                    
+                                h3
+                                    font-weight: 800
+                                    font-size: 32px
+                            .projects-gallary
+                                    width: 100%
+                                    height: auto
+                                    margin-bottom: 60px
+                                    ul
+                                        list-style: none
+                                        display: grid
+                                        grid-template-columns: 1fr 1fr
+                                        li
+                                            position: relative
+                                            padding-right: 40px
+                                            height: 350px
+                                            max-height: 350px
+                                            overflow: hidden
+                                            &:nth-child(1),
+                                            &:nth-child(2)
+                                                margin: 0 0 50px
+                                            .inner
+                                                position: relative
+                                                width: 100%
+                                                height: 100%
+                                                transition: $transition
+                                                display: flex
+                                                justify-content: center
+                                                align-items: center
+                                                .view-project
+                                                    width: 80%
+                                                    height: 80%
+                                                    background-color: $leftPart-bg-color
+                                                    display: none
+                                                    opacity: 0.9
+                                                    a
+                                                        text-decoration: none
+                                                        font-weight: 800
+                                                        color: $body-text-color
+                                                        width: 100%
+                                                        height: 100%
+                                                        display: flex
+                                                        justify-content: center
+                                                        align-items: center
+                                                &:hover
+                                                    transform: $transform
+                                                    .view-project
+                                                        display: block
+                                            .figures
+                                                background: url(../images/Figures.jpg)
+                                                background-size: cover
+                                                background-repeat: no-repeat
+                                                background-position: top center
+                                            .owltastic
+                                                background: url(../images/owltastic.jpg)
+                                                background-size: cover
+                                                background-repeat: no-repeat
+                                                background-position: top center
+                                            .gambo
+                                                background: url(../images/gambo.jpg)
+                                                background-size: cover
+                                                background-repeat: no-repeat
+                                                background-position: top center
+                                            .carlos
+                                                background: url(../images/Carlos_Creation.jpg)
+                                                background-size: cover
+                                                background-repeat: no-repeat
+                                                background-position: top center
+                            .github-link
+                                width: 100%
+                                height: auto
+                                display: flex
+                                text-align: center
+                                justify-content: center
+                                a
+                                    text-decoration: none
+                                    color: $body-text-color
+                                    font-weight: 600
+                                    transition: $transition
+                                    &:hover
+                                        letter-spacing: 2.5px
+
+                    // Start Contact Section Style
+                    .portfolio-contact
+                        position: relative
+                        display: flex
+                        align-items: center
+                        width: 100%
+                        min-height: 100vh
+                        .contact-content
+                            padding: 100PX 0PX
+                            .contact-title
+                                width: 100%
+                                margin-bottom: 60px
+                                span
+                                    @include span()
+                                h3
+                                    font-weight: 800
+                                    font-size: 32px
+                            .contact-form
+                                width: 100%
+                                height: auto
+                                form
+                                    width: 100%
+                                    input,textarea
+                                        width: 100%
+                                        padding: 12px 20px
+                                        margin: 0 0 30px
+                                        outline: none
+                                        background-color: transparent
+                                        border: 2px solid $input-border-color
+                                        color: $leftPart-list-color
+                                        &::placeholder
+                                            color: $leftPart-list-color
+                                    button
+                                        display: inline-block
+                                        background-color: $body-text-color
+                                        width: 150px
+                                        color: $leftPart-bg-color
+                                        transition: $transition
+                                        border: 2px solid $body-text-color
+                                        border-radius: 0
+                                        height: 50px
+                                        font-weight: 600
+                                        cursor: pointer
+                                        &:hover
+                                            background-color: transparent
+                                            color: $body-text-color
+                                        
+            .active
+                opacity: 1
+                z-index: 5
+
+// Cursor Style
+.cursor
+    position: fixed
+    width: 30px
+    height: 30px
+    border-radius: 50%
+    transform: translate(-50%, -50%)
+    pointer-events: none
+    z-index: 50
+    background-color: $body-text-color
+    border: 6px solid gray
+    transition: all 0.3s ease
+    transition-property: background, transform
+    transform-origin: 100% 100%
+
+.link-grow
+    transform: scale(1.9)
+
+.expand
+    animation: cursorAnim 0.5s forwards
+
+@keyframes cursorAnim
+    0%
+        transform: scale(1)
+    50%
+        transform: scale(2)
+    100%
+        transform: scale(1)
+        opacity: 0
+    
+        
+// Responsive Design Style
+@media (max-width: 1200px)
+    .portfolio-container
+        .mobile-navbar
+            display: block
+        .leftPart
+            display: none
+        .rightPart
+            padding-left: 0
+            .rightPart-inner
+                border: none
+                .portfolio-section
+                    padding-left: 0
+
+@media ( max-width: 1040px )
+    .portfolio-container
+        .rightPart
+            .rightPart-inner
+                .portfolio-section
+                    .container
+                        .portfolio-home
+                            .home-content
+                                display: flex
+                                justify-content: center
+                                flex-direction: column
+                                align-items: center
+                                text-align: center
+                                padding: 100PX 0PX
+                                .avatar
+                                    margin-bottom: 30px
+                                .home-text
+                                    padding-left: 0
+                                    align-items: center
+                                    h3
+                                        font-size: 70px
+                        .portfolio-about
+                            .about-content
+                                padding: 120PX 0PX 100px
+                                .about-text
+                                    .about-text-inner
+                                        flex-direction: column
+                                        .left,.right
+                                            width: 100%
+                                            padding: 20px 0
+                        .portfolio-projects
+                            .projects-content
+                                padding: 120PX 0PX 100px
+                                .projects-gallary
+                                    ul
+                                        grid-template-columns: 1fr
+                                        li
+                                            padding-right: 0
+                                            &:not(:last-child)
+                                                margin-bottom: 40px
+                        .portfolio-contact
+                            .contact-content
+                                padding: 120PX 0PX 100px
+    .cursor
+        display: none
+
+@media  (max-width: 768px)
+    .portfolio-container
+        .rightPart
+            .rightPart-inner
+                .portfolio-section
+                    .container
+                        .portfolio-home
+                            .home-content
+                                .avatar
+                                    width: 200px
+                                    height: 200px
+                                .home-text
+                                    h3
+                                        font-size: 40px
+
+@media  (max-width: 500px)
+    .preloader
+        p
+            font-size: 20px
+    .portfolio-container
+        .mobile-navbar
+            .navbar-inner
+                padding: 20px 12px
+                .logo
+                    font-size: 20px
+                .list
+                    font-size: 14px
+                    ul
+                        li
+                            &:not(:last-child)
+                                margin: 0 8px 0 0
+
+        .rightPart
+            .rightPart-inner
+                .portfolio-section
+                    .container
+                        padding: 0 14px
+                        .portfolio-home
+                            .home-content
+                                .avatar
+                                    width: 200px
+                                    height: 200px
+                                .home-text
+                                    h3
+                                        font-size: 20px
+                                    p
+                                        font-size: 14px
+                        .portfolio-about
+                            .about-content
+                                padding: 100px 0 50px
+                                .about-image
+                                    margin-bottom: 20px
+                                .about-text
+                                    h3
+                                        font-size: 16px
+                                        margin-bottom: 0
+                                    .about-text-inner
+                                        .left,
+                                        .right
+                                            padding: 10px 0
+                                        .left
+                                            p
+                                                font-size: 14px
+                                        .right
+                                            ul
+                                                li
+                                                    p
+                                                        font-size: 14px
+                                .about-social
+                                    padding: 12px 0
+                        .portfolio-projects
+                            .projects-content
+                                padding: 100px 0 50px
+                                .projects-title
+                                    margin-bottom: 40px
+                                    h3
+                                        font-size: 20px
+                                .projects-gallary
+                                    margin-bottom: 30px
+                                    ul
+                                        li
+                                            height: 150px
+                                            max-height: 150px
+                                        li:not(:last-child)
+                                            margin-bottom: 20px
+                        .portfolio-contact
+                            .contact-content
+                                padding: 100px 0 50px
+                                .contact-title
+                                    margin-bottom: 40px
+                                    h3
+                                        font-size: 20px
+                                .contact-form
+                                    form
+                                        input,textarea
+                                            margin: 0 0 16px
+                                        button
+                                            width: 100px
+                                            font-size: 12px
+                                            margin: 10px 0 0
+                                            height: 40px
+                                        
+
+
+
+    
+
+
+
+
+
+
+
+    
+
+
+
+    
+
+    
