@@ -453,7 +453,7 @@ body {
                     color: var(--leftPart-list-color); }
                     .portfolio-container .rightPart .rightPart-inner .portfolio-section .container .portfolio-contact .contact-content .contact-form form input::placeholder, .portfolio-container .rightPart .rightPart-inner .portfolio-section .container .portfolio-contact .contact-content .contact-form form textarea::placeholder {
                       color: var(--leftPart-list-color); }
-                  .portfolio-container .rightPart .rightPart-inner .portfolio-section .container .portfolio-contact .contact-content .contact-form form button {
+                  .portfolio-container .rightPart .rightPart-inner .portfolio-section .container .portfolio-contact .contact-content .contact-form form input[type="submit"] {
                     display: inline-block;
                     background-color: var(--body-text-color);
                     width: 150px;
@@ -464,7 +464,7 @@ body {
                     height: 50px;
                     font-weight: 600;
                     cursor: pointer; }
-                    .portfolio-container .rightPart .rightPart-inner .portfolio-section .container .portfolio-contact .contact-content .contact-form form button:hover {
+                    .portfolio-container .rightPart .rightPart-inner .portfolio-section .container .portfolio-contact .contact-content .contact-form form input[type="submit"]:hover {
                       background-color: transparent;
                       color: var(--body-text-color); }
       .portfolio-container .rightPart .rightPart-inner .active {
