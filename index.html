@@ -1,240 +1,332 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Front-end developer">
-    <meta name="author" content="Mohamed Elsayed">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Front-end developer" />
+    <meta name="author" content="Mohamed Elsayed" />
     <title>Mohamed Elsayed</title>
-    <link rel="shortcut icon" type="image/jpg" href="./images/logo.jfif" />
+    <link rel="shortcut icon" type="image/jpg" href="./images/logo.png" />
     <!-- style sheet -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/style.css" />
     <!-- google fonts -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;900&display=swap"
+      rel="stylesheet"
+    />
     <!-- font awesome cdn -->
-    <script src="https://kit.fontawesome.com/150c3bb804.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/150c3bb804.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- transition css -->
-    <link rel="stylesheet" type="text/plain" href="https://unpkg.com/transition-style">
-</head>
+    <link
+      rel="stylesheet"
+      type="text/plain"
+      href="https://unpkg.com/transition-style"
+    />
+    <link rel="manifest" href="./pwa/manifest.webmanifest" />
+    <!-- ios support -->
+    <link rel="apple-touch-icon" href="./images/icons/icon-192x192.png" />
+    <meta name="apple-mobile-web-app-status-bar" content="#111" />
+    <!-- windows -->
+    <meta
+      name="msapplication-TileImage"
+      content="./images/icons/icon-192x192.png"
+    />
+    <meta name="msapplication-TileColor" content="#ebeafa" />
+  </head>
 
-<body class="dark-mode">
-
+  <body class="dark-mode">
     <div class="preloader">
-        <p class="anim-typeWriter">Welcome to my website</p>
+      <p class="anim-typeWriter">Welcome to my website</p>
     </div>
 
     <div transition-style="in:circle:top-right" class="portfolio-container">
+      <div class="mobile-navbar">
+        <div class="navbar-inner">
+          <div class="logo">
+            <h3 class="logo">MO</h3>
+          </div>
+          <div class="list">
+            <ul>
+              <li data-filter="home">
+                <abbr title="Home"><i class="fas fa-home"></i></abbr>
+              </li>
+              <li data-filter="about">
+                <abbr title="About"><i class="fas fa-user"></i></abbr>
+              </li>
+              <li data-filter="projects">
+                <abbr title="Projects"><i class="fas fa-tasks"></i></abbr>
+              </li>
+              <li data-filter="contact">
+                <abbr title="Contact Me"
+                  ><i class="fas fa-phone-square"></i
+                ></abbr>
+              </li>
+            </ul>
+            <div class="toggle">
+              <abbr title="Switch Theme"><i class="fas fa-sun"></i></abbr>
+            </div>
+          </div>
+        </div>
+      </div>
 
-        <div class="mobile-navbar">
-            <div class="navbar-inner">
-                <div class="logo">
-                    <h3 class="logo">MO</h3>
+      <div class="leftPart">
+        <div class="leftPart-inner">
+          <h1 class="logo">MO</h1>
+          <ul>
+            <li data-filter="home" class="link checked">home</li>
+            <li data-filter="about" class="link">about</li>
+            <li data-filter="projects" class="link">projects</li>
+            <li data-filter="contact" class="link">contact</li>
+          </ul>
+          <div class="toggle">
+            <p><i class="fas fa-sun"></i> <span>Light Mode</span></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="rightPart">
+        <div class="rightPart-inner">
+          <div class="portfolio-section home active">
+            <div class="container">
+              <div class="portfolio-home">
+                <div class="home-content">
+                  <div class="avatar">
+                    <img src="./images/avatar.jpg" alt="" />
+                  </div>
+                  <div class="home-text">
+                    <h3><span>Mohamed </span>Elsayed</h3>
+                    <p>
+                      I'm a front-end developer based in Egypt and happy to work
+                      with any client ;
+                    </p>
+                  </div>
                 </div>
-                <div class="list">
+              </div>
+            </div>
+          </div>
+
+          <div class="portfolio-section about">
+            <div class="container">
+              <div class="portfolio-about">
+                <div class="about-content">
+                  <div class="about-image">
+                    <img
+                      width="100%"
+                      height="100%"
+                      src="./images/header.jpg"
+                      alt=""
+                    />
+                  </div>
+                  <div class="about-text">
+                    <h3>mohamed elsayed & developer</h3>
+                    <div class="about-text-inner">
+                      <div class="left">
+                        <p>
+                          Hi, I'm Mohamed a front-end developer based in Egypt
+                          with 2 years of experience. Proficient with HTML, CSS,
+                          and Javascript Plus Modren libraries, and frameworks.
+                        </p>
+                      </div>
+                      <div class="right">
+                        <ul>
+                          <li>
+                            <p><span>birthday:</span>02 August 1999</p>
+                          </li>
+                          <li>
+                            <p><span>age:</span>22</p>
+                          </li>
+                          <li>
+                            <p><span>address:</span>Mansoura, Egypt</p>
+                          </li>
+                          <li>
+                            <p>
+                              <span>phone:</span
+                              ><a href="tel:+201 023 214 474"
+                                >+201 023 214 474</a
+                              >
+                            </p>
+                          </li>
+                          <li>
+                            <p><span>study:</span>Mansoura University</p>
+                          </li>
+                          <li>
+                            <p><span>work:</span>Avilable</p>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="about-social">
                     <ul>
-                        <li data-filter="home"><abbr title="Home"><i class="fas fa-home"></i></abbr></li>
-                        <li data-filter="about"><abbr title="About"><i class="fas fa-user"></i></abbr></li>
-                        <li data-filter="projects"><abbr title="Projects"><i class="fas fa-tasks"></i></abbr></li>
-                        <li data-filter="contact"><abbr title="Contact Me"><i class="fas fa-phone-square"></i></abbr>
-                        </li>
+                      <li>
+                        <a
+                          rel="noopener noreferrer"
+                          aria-label="facebook"
+                          target="_blank"
+                          href="https://www.facebook.com/profile.php?id=100008125182310"
+                          ><i class="fab fa-facebook"></i
+                        ></a>
+                      </li>
+                      <li>
+                        <a
+                          rel="noopener noreferrer"
+                          aria-label="twitter"
+                          target="_blank"
+                          href="https://twitter.com/Mohamed72Elsaid?s=09"
+                          ><i class="fab fa-twitter"></i
+                        ></a>
+                      </li>
+                      <li>
+                        <a
+                          rel="noopener noreferrer"
+                          aria-label="instagram"
+                          target="_blank"
+                          href="https://www.instagram.com/mohamed72elsaid/"
+                          ><i class="fab fa-instagram"></i
+                        ></a>
+                      </li>
+                      <li>
+                        <a
+                          rel="noopener noreferrer"
+                          aria-label="linkedin"
+                          target="_blank"
+                          href="https://www.linkedin.com/in/mohamed-elsayed-94bba81b8/"
+                          ><i class="fab fa-linkedin"></i
+                        ></a>
+                      </li>
                     </ul>
-                    <div class="toggle">
-                        <abbr title="Switch Theme"><i class="fas fa-sun"></i></abbr>
-                    </div>
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
+          </div>
 
-        <div class="leftPart">
-            <div class="leftPart-inner">
-                <h1 class="logo">MO</h1>
-                <ul>
-                    <li data-filter="home" class="link checked">home</li>
-                    <li data-filter="about" class="link">about</li>
-                    <li data-filter="projects" class="link">projects</li>
-                    <li data-filter="contact" class="link">contact</li>
-                </ul>
-                <div class="toggle">
-                    <p><i class="fas fa-sun"></i> <span>Light Mode</span></p>
+          <div class="portfolio-section projects">
+            <div class="container">
+              <div class="portfolio-projects">
+                <div class="projects-content">
+                  <div class="projects-title">
+                    <span>Projects</span>
+                    <h3>Creative Projects</h3>
+                  </div>
+                  <div class="projects-gallary">
+                    <ul>
+                      <li>
+                        <div class="inner figures">
+                          <div class="view-project">
+                            <a
+                              rel="noopener noreferrer"
+                              target="_blank"
+                              href="https://github.com/mohamedelsaid72/figures"
+                              >Open</a
+                            >
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="inner owltastic">
+                          <div class="view-project">
+                            <a
+                              rel="noopener noreferrer"
+                              target="_blank"
+                              href="https://github.com/mohamedelsaid72/owltastic"
+                              >Open</a
+                            >
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="inner gambo">
+                          <div class="view-project">
+                            <a
+                              rel="noopener noreferrer"
+                              target="_blank"
+                              href="https://github.com/mohamedelsaid72/Gambo-Coffe-Website"
+                              >Open</a
+                            >
+                          </div>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="inner carlos">
+                          <div class="view-project">
+                            <a
+                              rel="noopener noreferrer"
+                              target="_blank"
+                              href="https://github.com/mohamedelsaid72/carlos-creation"
+                              >Open</a
+                            >
+                          </div>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="github-link">
+                    <a
+                      rel="noopener noreferrer"
+                      target="_blank"
+                      href="https://github.com/mohamedelsaid72"
+                      >Show All Projects</a
+                    >
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
+          </div>
 
-        <div class="rightPart">
-            <div class="rightPart-inner">
-                <div class="portfolio-section home active">
-                    <div class="container">
-                        <div class="portfolio-home">
-                            <div class="home-content">
-                                <div class="avatar">
-                                    <img src="./images/nwdn_file_temp_1613473172249.jpg" alt="">
-                                </div>
-                                <div class="home-text">
-                                    <h3><span>Mohamed </span>Elsayed</h3>
-                                    <p>I'm a front-end developer based in Egypt and happy to work with any
-                                        client ;
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+          <div class="portfolio-section contact">
+            <div class="container">
+              <div class="portfolio-contact">
+                <div class="contact-content">
+                  <div class="contact-title">
+                    <span>contact</span>
+                    <h3>Get In Touch</h3>
+                  </div>
+                  <div class="contact-form">
+                    <form
+                      name="Contact-form"
+                      accept-charset="utf-8"
+                      action="https://formspree.io/f/mknkjaje"
+                      method="post"
+                    >
+                      <input
+                        type="text"
+                        name="name"
+                        placeholder="Your Name"
+                        required
+                      />
+                      <input
+                        type="email"
+                        name="Email"
+                        placeholder="Email"
+                        required
+                      />
+                      <textarea
+                        rows="5"
+                        name="message"
+                        placeholder="Your Message"
+                        required
+                      ></textarea>
+                      <input type="submit" value="Send" />
+                    </form>
+                  </div>
                 </div>
-
-                <div class="portfolio-section about">
-                    <div class="container">
-                        <div class="portfolio-about">
-                            <div class="about-content">
-                                <div class="about-image">
-                                    <img width="100%" height="100%" src="./images/400094600326_4039623.jpg" alt="">
-                                </div>
-                                <div class="about-text">
-                                    <h3>mohamed elsayed & developer</h3>
-                                    <div class="about-text-inner">
-                                        <div class="left">
-                                            <p>Hi, I'm Mohamed a front-end developer based in Egypt with 2 years of
-                                                experience. Proficient with HTML, CSS, and Javascript Plus Modren
-                                                libraries, and frameworks.
-                                            </p>
-                                        </div>
-                                        <div class="right">
-                                            <ul>
-                                                <li>
-                                                    <p><span>birthday:</span>02 August 1999</p>
-                                                </li>
-                                                <li>
-                                                    <p><span>age:</span>21</p>
-                                                </li>
-                                                <li>
-                                                    <p><span>address:</span>Mansoura, Egypt</p>
-                                                </li>
-                                                <li>
-                                                    <p><span>phone:</span><a href="tel:+201 023 214 474">+201 023 214
-                                                            474</a></p>
-                                                </li>
-                                                <li>
-                                                    <p><span>study:</span>Mansoura University</p>
-                                                </li>
-                                                <li>
-                                                    <p><span>work:</span>Avilable</p>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="about-social">
-                                    <ul>
-                                        <li>
-                                            <a rel="noopener noreferrer" aria-label="facebook" target="_blank"
-                                                href="https://www.facebook.com/profile.php?id=100008125182310"><i
-                                                    class="fab fa-facebook"></i></a>
-                                        </li>
-                                        <li>
-                                            <a rel="noopener noreferrer" aria-label="twitter" target="_blank"
-                                                href="https://twitter.com/Mohamed72Elsaid?s=09"><i
-                                                    class="fab fa-twitter"></i></a>
-                                        </li>
-                                        <li>
-                                            <a rel="noopener noreferrer" aria-label="instagram" target="_blank"
-                                                href="https://www.instagram.com/mohamed72elsaid/"><i
-                                                    class="fab fa-instagram"></i></a>
-                                        </li>
-                                        <li>
-                                            <a rel="noopener noreferrer" aria-label="linkedin" target="_blank"
-                                                href="https://www.linkedin.com/in/mohamed-elsayed-94bba81b8/"><i
-                                                    class="fab fa-linkedin"></i></a>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-section projects">
-                    <div class="container">
-                        <div class="portfolio-projects">
-                            <div class="projects-content">
-                                <div class="projects-title">
-                                    <span>Projects</span>
-                                    <h3>Creative Projects</h3>
-                                </div>
-                                <div class="projects-gallary">
-                                    <ul>
-                                        <li>
-                                            <div class="inner figures">
-                                                <div class="view-project">
-                                                    <a rel="noopener noreferrer" target="_blank"
-                                                        href="https://github.com/mohamedelsaid72/figures">Open</a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="inner owltastic">
-                                                <div class="view-project">
-                                                    <a rel="noopener noreferrer" target="_blank"
-                                                        href="https://github.com/mohamedelsaid72/owltastic">Open</a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="inner gambo">
-                                                <div class="view-project">
-                                                    <a rel="noopener noreferrer" target="_blank"
-                                                        href="https://github.com/mohamedelsaid72/Gambo-Coffe-Website">Open</a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="inner carlos">
-                                                <div class="view-project">
-                                                    <a rel="noopener noreferrer" target="_blank"
-                                                        href="https://github.com/mohamedelsaid72/carlos-creation">Open</a>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="github-link">
-                                    <a rel="noopener noreferrer" target="_blank"
-                                        href="https://github.com/mohamedelsaid72">Show All Projects</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="portfolio-section contact">
-                    <div class="container">
-                        <div class="portfolio-contact">
-                            <div class="contact-content">
-                                <div class="contact-title">
-                                    <span>contact</span>
-                                    <h3>Get In Touch</h3>
-                                </div>
-                                <div class="contact-form">
-                                    <form name="Contact-form" accept-charset="utf-8" action="https://formspree.io/f/mknkjaje" method="post">
-                                          <input type="text" name="name" placeholder="Your Name" required>
-                                          <input type="email" name="Email" placeholder="Email" required>
-                                          <textarea rows="5" name="message" placeholder="Your Message" required></textarea>
-                                        <input type="submit" value="Send">
-                                      </form>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+              </div>
             </div>
+          </div>
         </div>
-
+      </div>
     </div>
 
     <div class="cursor"></div>
 
-    <!-- script file -->
+    <!-- script files -->
+    <script src="./js/app.js"></script>
     <script src="./js/main.js"></script>
-</body>
-
+  </body>
 </html>
