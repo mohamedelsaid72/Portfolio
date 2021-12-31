@@ -1,11 +1,11 @@
 {
-  "theme_color": "#111111",
-  "background_color": "#111111",
+  "theme_color": "#000",
+  "background_color": "#000",
   "display": "standalone",
   "start_url": "../index.html",
   "orientation": "portrait-primary",
-  "name": "Mo",
-  "short_name": "Mohamed Elsayed",
+  "name": "Mohamed Elsayed",
+  "short_name": "ME",
   "description": "Front-end developer portfolio",
   "icons": [
     {
